@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "e-commerce app backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tezerac/e-commerce_MyShop.git"
+  },
+  "author": "Tez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tezerac/e-commerce_MyShop/issues"
+  },
+  "homepage": "https://github.com/tezerac/e-commerce_MyShop#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
