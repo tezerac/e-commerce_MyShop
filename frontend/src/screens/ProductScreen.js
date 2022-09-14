@@ -1,12 +1,24 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
-import Products from '../Products';
 import Rating from '../component/Rating';
+import axios from 'axios'
 const ProductScreen = () => {
 
-  const param=useParams()
-  const product=Products.find((p)=> p._id===param._id)
+  const params=useParams()
+  const [product,setProduct]=useState({})
+  
+  useEffect(()=>{
+    const fetchProduct=async()=>{
+    const {data}= await axios.get(`/api/products/${params.id}`)
+    //next step is assign the returned result to the state
+    setProduct(data)
+    // next call this function in the main thread
+    }
+  fetchProduct()
+
+  },[])
+  // if i dont have a variable to make changes make empty brace
   return(<>
       <Link className='btn btn-light my-3' to='/'>
         Go Back
